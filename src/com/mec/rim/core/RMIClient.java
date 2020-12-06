@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.net.Socket;
 
-public class Client extends InitializtionAdptor {
+public class RMIClient extends InitializtionAdptor {
     private String serverip;
     private int port;
     private DataOutputStream dos;
@@ -52,7 +52,7 @@ public class Client extends InitializtionAdptor {
             String message = method.hashCode() + "&&" +
                     getParameterValues(method, args);
             dos.writeUTF(message);
-            result = dealReturnValue(dis.readUTF(),method.getReturnType());
+            result = dealReturnValue(dis.readUTF(),method.getGenericReturnType());
         } catch (IOException ignored) {
         } finally {
             close();

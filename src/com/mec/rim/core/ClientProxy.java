@@ -3,9 +3,9 @@ package com.mec.rim.core;
 import java.lang.reflect.Proxy;
 
 public class ClientProxy {
-    private final Client client;
+    private final RMIClient client;
 
-    public ClientProxy(Client client) {
+    public ClientProxy(RMIClient client) {
         this.client = client;
     }
 

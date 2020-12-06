@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Server extends InitializtionAdptor implements Runnable,ISpeaker{
+public class RMIServer extends InitializtionAdptor implements Runnable,ISpeaker{
     private int port;
     private static final int DEFAULT_PORT = 54188;
     private ServerSocket serverSocket;
@@ -16,7 +16,7 @@ public class Server extends InitializtionAdptor implements Runnable,ISpeaker{
     private volatile boolean goon;
     private ExecutorService threadPool;
 
-    public Server() {
+    public RMIServer() {
         this(DEFAULT_PORT);
     }
 
@@ -25,7 +25,7 @@ public class Server extends InitializtionAdptor implements Runnable,ISpeaker{
         this.threadPool = threadPool;
     }
 
-    public Server(int port) {
+    public RMIServer(int port) {
         listeners = new LinkedList<>();
         this.port = port;
     }
